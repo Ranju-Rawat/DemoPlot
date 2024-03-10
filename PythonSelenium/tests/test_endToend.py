@@ -24,6 +24,7 @@ class TestOne(BaseClass):
        checkOutPg = CheckOutPage(self.driver)
        phnList = checkOutPg.phoneList()
        log = self.test_loggingDemo()
+       print("This is for comming purposes")
 
        # phones = wait.until(expected_conditions.presence_of_all_elements_located(phnList))
        # print(phones)
