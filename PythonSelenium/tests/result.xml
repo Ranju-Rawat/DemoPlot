@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="5" time="44.578" timestamp="2024-03-10T00:34:21.828726" hostname="CT_ASUS"><testcase classname="test_HomePage.TestHomePg" name="test_loggingDemo" time="4.612" /><testcase classname="test_HomePage.TestHomePg" name="test_formSubmittion[getData0]" time="11.765"><failure message="TypeError: not all arguments converted during string formatting">self = &lt;tests.test_HomePage.TestHomePg object at 0x0000023A49C82C30&gt;
+getData = {'Email': 'rawatranju@gmail.com', 'Gender': 'Female', 'Name': 'Ranju', 'Password': '123456'}
+
+    def test_formSubmittion(self, getData):
+        # sObj = Service("\\Users\\rawat\\Downloads\\chromedriver-win64\\chromedriver.exe")
+        # driver = webdriver.Chrome(service=sObj)
+        # driver.get("https://rahulshettyacademy.com/angularpractice/")
+        time.sleep(5)
+        log = self.test_loggingDemo()
+        homePG = HomePage(self.driver)
+        homePG.getName().send_keys(getData["Name"])
+        homePG.getEmail().send_keys(getData["Email"])
+        homePG.getPassword().send_keys(getData["Password"])
+        homePG.getCheckBox().click()
+        homePG.getGender()
+        self.selectOptionByText(homePG.getGender(), getData["Gender"])
+        #dropdown.select_by_index(0)
+        time.sleep(5)
+        homePG.getSubmit().click()
+        msg = homePG.getSuccessMsg().text
+        assert "success" in msg
+        self.driver.refresh()
+&gt;       log.info("GetData", getData["Name"])
+
+test_HomePage.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1539: in info
+    self._log(INFO, msg, args, **kwargs)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1684: in _log
+    self.handle(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1700: in handle
+    self.callHandlers(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1762: in callHandlers
+    hdlr.handle(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1028: in handle
+    self.emit(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\logging.py:380: in emit
+    super().emit(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1168: in emit
+    self.handleError(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1160: in emit
+    msg = self.format(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:999: in format
+    return fmt.format(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\logging.py:140: in format
+    return super().format(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:703: in format
+    record.message = record.getMessage()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;LogRecord: test_formSubmittion, 20, C:\Users\rawat\PycharmProjects\pythonSelfFramwork\pythonProject1\tests\test_HomePage.py, 35, "GetData"&gt;
+
+    def getMessage(self):
+        """
+        Return the message for this LogRecord.
+    
+        Return the message for this LogRecord after merging any user-supplied
+        arguments with the message.
+        """
+        msg = str(self.msg)
+        if self.args:
+&gt;           msg = msg % self.args
+E           TypeError: not all arguments converted during string formatting
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:392: TypeError</failure></testcase><testcase classname="test_HomePage.TestHomePg" name="test_formSubmittion[getData1]" time="11.497"><failure message="TypeError: not all arguments converted during string formatting">self = &lt;tests.test_HomePage.TestHomePg object at 0x0000023A49D52780&gt;
+getData = {'Email': 'rawatjyoti@gmail.com', 'Gender': 'Male', 'Name': 'Jyoti', 'Password': '333456'}
+
+    def test_formSubmittion(self, getData):
+        # sObj = Service("\\Users\\rawat\\Downloads\\chromedriver-win64\\chromedriver.exe")
+        # driver = webdriver.Chrome(service=sObj)
+        # driver.get("https://rahulshettyacademy.com/angularpractice/")
+        time.sleep(5)
+        log = self.test_loggingDemo()
+        homePG = HomePage(self.driver)
+        homePG.getName().send_keys(getData["Name"])
+        homePG.getEmail().send_keys(getData["Email"])
+        homePG.getPassword().send_keys(getData["Password"])
+        homePG.getCheckBox().click()
+        homePG.getGender()
+        self.selectOptionByText(homePG.getGender(), getData["Gender"])
+        #dropdown.select_by_index(0)
+        time.sleep(5)
+        homePG.getSubmit().click()
+        msg = homePG.getSuccessMsg().text
+        assert "success" in msg
+        self.driver.refresh()
+&gt;       log.info("GetData", getData["Name"])
+
+test_HomePage.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1539: in info
+    self._log(INFO, msg, args, **kwargs)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1684: in _log
+    self.handle(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1700: in handle
+    self.callHandlers(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1762: in callHandlers
+    hdlr.handle(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1028: in handle
+    self.emit(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\logging.py:380: in emit
+    super().emit(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1168: in emit
+    self.handleError(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:1160: in emit
+    msg = self.format(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:999: in format
+    return fmt.format(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\logging.py:140: in format
+    return super().format(record)
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:703: in format
+    record.message = record.getMessage()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;LogRecord: test_formSubmittion, 20, C:\Users\rawat\PycharmProjects\pythonSelfFramwork\pythonProject1\tests\test_HomePage.py, 35, "GetData"&gt;
+
+    def getMessage(self):
+        """
+        Return the message for this LogRecord.
+    
+        Return the message for this LogRecord after merging any user-supplied
+        arguments with the message.
+        """
+        msg = str(self.msg)
+        if self.args:
+&gt;           msg = msg % self.args
+E           TypeError: not all arguments converted during string formatting
+
+..\..\..\..\AppData\Local\Programs\Python\Python312\Lib\logging\__init__.py:392: TypeError</failure></testcase><testcase classname="test_endToend.TestOne" name="test_loggingDemo" time="4.832" /><testcase classname="test_endToend.TestOne" name="test_e2e" time="11.079" /></testsuite></testsuites>
